@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Job?</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; text-align: center; }
+        .box { border: 1px solid #ccc; padding: 20px; max-width: 400px; margin: 0 auto; }
+        button { padding: 10px 20px; background-color: #f44336; color: white; border: none; cursor: pointer; }
+        a { margin-left: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2>Are you sure?</h2>
+        <p>You are about to delete the application for: <strong>{{ object.company }} - {{ object.position }}</strong></p>
+        
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Yes, Delete it</button>
+            <a href="{% url 'dashboard' %}">Cancel</a>
+        </form>
+    </div>
+
+</body>
+</html>
